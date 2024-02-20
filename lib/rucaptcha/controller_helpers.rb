@@ -77,7 +77,10 @@ module RuCaptcha
 
       cookies[:_rucaptcha_session_id] = {
         value: SecureRandom.hex(16),
-        expires: 1.day
+        expires: 1.day,
+        secure: true,
+        httponly: true,
+        same_site: :none
       }
     end
 
